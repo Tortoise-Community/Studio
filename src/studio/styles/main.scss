@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Montserrat:wght@400;600;700&display=swap");
+
+$bg-obsidian: #0a0a0a;
+$bg-panel: #1a1a1a;
+$accent-gold: #c5a47e;
+$border-soft: rgba(255, 255, 255, 0.1);
+
+.leetcode-container {
+  background-color: $bg-obsidian;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+  color: #ffffff;
+}
+
+.main-workspace {
+  flex: 1;
+  padding: 10px;
+  height: 100%;
+
+  & > div {
+    height: 100%;
+  }
+}
+
+.panel-inner {
+  height: 100%;
+  width: 100%;
+  background: $bg-panel;
+  border-radius: 12px;
+  border: 1px solid $border-soft;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.resizer-v,
+.resizer-h {
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+  &:hover {
+    background: rgba($accent-gold, 0.1);
+  }
+}
+
+.resizer-v {
+  width: 10px;
+  cursor: col-resize;
+}
+.resizer-h {
+  height: 10px;
+  cursor: row-resize;
+}

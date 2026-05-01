@@ -1,11 +1,11 @@
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Executor from "../pastebin/pages/Executor";
+import Main from "../studio/main";
 
-export default function ExecutorRoutes() {
+export default function StudioRoutes() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Executor} />
+        <Route exact path="/" component={Main} />
       </Switch>
     </BrowserRouter>
   );

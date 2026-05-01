@@ -1,0 +1,104 @@
+$editor-bg: #1a1a1a;
+$header-bg: #242424;
+$accent-gold: #c5a47e;
+$border-soft: rgba(255, 255, 255, 0.08);
+
+.editor-window {
+  display: flex;
+  flex-direction: column;
+  background: $editor-bg;
+  border: 1px solid $border-soft;
+  border-radius: 12px;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  .window-header {
+    background: $header-bg;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 7px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+    .header-left,
+    .header-right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+    }
+
+    .lang-selector-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.05);
+      padding: 5px 12px;
+      border-radius: 6px;
+      transition: 0.2s;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .lang-icon {
+        color: $accent-gold;
+        font-size: 14px;
+      }
+
+      .ghost-select {
+        background: transparent;
+        border: none;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 600;
+        outline: none;
+        cursor: pointer;
+        appearance: none;
+
+        option {
+          background: $header-bg;
+          color: #fff;
+        }
+      }
+    }
+
+    .run-action-btn {
+      margin-left: auto;
+      background: $accent-gold;
+      color: #000;
+      border: none;
+      padding: 6px 20px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+
+      &:hover:not(:disabled) {
+        filter: brightness(1.1);
+        box-shadow: 0 0 15px rgba($accent-gold, 0.3);
+      }
+      &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .monaco-container {
+    flex: 1;
+    width: 100%;
+    background: $editor-bg;
+  }
+}
+
+.spinner-border-sm {
+  width: 1rem;
+  height: 1rem;
+  border-width: 0.2em;
+}

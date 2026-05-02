@@ -1,0 +1,213 @@
+$bg-obsidian: #0a0a0a;
+$bg-panel: #141414;
+$bg-card: #1a1a1a;
+$accent-gold: #c5a47e;
+$border-muted: rgba(255, 255, 255, 0.08);
+
+$easy: #00af9b;
+$medium: #feb236;
+$hard: #ff375f;
+
+.dashboard-page {
+  background-color: $bg-obsidian;
+  min-height: 100vh;
+  color: #fff;
+
+  section {
+    padding-top: 0px !important;
+  }
+}
+
+.dashboard-grid {
+  display: flex;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 30px 20px;
+  gap: 24px;
+}
+
+.main-content {
+  flex: 1;
+  min-width: 0;
+
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+
+    .stat-mini-card {
+      background: $bg-card;
+      flex: 1;
+      padding: 12px;
+      border-radius: 8px;
+      border: 1px solid $border-muted;
+      display: flex;
+      flex-direction: column;
+
+      .label {
+        font-size: 10px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .value {
+        font-size: 18px;
+        font-weight: 700;
+        &.easy {
+          color: $easy;
+        }
+        &.medium {
+          color: $medium;
+        }
+        &.hard {
+          color: $hard;
+        }
+      }
+    }
+  }
+
+  .controls-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+
+    .search-wrapper {
+      flex: 1;
+      background: $bg-panel;
+      border: 1px solid $border-muted;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 0 12px;
+      input {
+        background: transparent;
+        border: none;
+        color: #fff;
+        height: 36px;
+        width: 100%;
+        outline: none;
+        font-size: 13px;
+      }
+      i {
+        color: rgba(255, 255, 255, 0.2);
+        font-size: 12px;
+      }
+    }
+
+    .difficulty-select {
+      background: $bg-panel;
+      color: #fff;
+      border: 1px solid $border-muted;
+      border-radius: 6px;
+      padding: 0 10px;
+      font-size: 13px;
+    }
+  }
+
+  .table-container {
+    background: $bg-panel;
+    border: 1px solid $border-muted;
+    border-radius: 10px;
+    overflow: hidden;
+
+    .problem-table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th {
+        text-align: left;
+        padding: 12px 16px;
+        font-size: 11px;
+        text-transform: uppercase;
+        color: rgba(255, 255, 255, 0.3);
+        border-bottom: 1px solid $border-muted;
+      }
+      td {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+        font-size: 13px;
+      }
+
+      .status-col {
+        width: 60px;
+        text-align: center;
+      }
+      .solved-icon {
+        color: $easy;
+      }
+      .attempted-icon {
+        color: $medium;
+      }
+      .diff-col {
+        font-weight: 600;
+        &.easy {
+          color: $easy;
+        }
+        &.medium {
+          color: $medium;
+        }
+        &.hard {
+          color: $hard;
+        }
+      }
+      .p-link {
+        cursor: pointer;
+        transition: 0.2s;
+        &:hover {
+          color: $accent-gold;
+        }
+      }
+    }
+  }
+
+  .pagination-footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    button {
+      background: $bg-panel;
+      border: 1px solid $border-muted;
+      color: #fff;
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      cursor: pointer;
+      &:disabled {
+        opacity: 0.2;
+      }
+    }
+    .page-text {
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+    }
+  }
+}
+
+.sidebar-area {
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  .sidebar-placeholder {
+    h3 {
+      font-size: 14px;
+      margin-bottom: 12px;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    .placeholder-card {
+      background: $bg-panel;
+      border: 1px dashed rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      height: 200px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255, 255, 255, 0.2);
+      font-size: 13px;
+    }
+  }
+}

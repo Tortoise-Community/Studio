@@ -11,21 +11,20 @@ $border-soft: rgba(255, 255, 255, 0.08);
   width: 300px;
   height: 100vh;
   background-color: $bg-obsidian;
-  border-right: 1px solid $border-soft; // Matches your global border style
+  border-right: 1px solid $border-soft;
   z-index: 3000;
   transition:
     transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
     box-shadow 0.4s ease,
     visibility 0.4s;
 
-  // FIX: Remove shadow and hide visibility when closed to prevent "edge bleeding"
   box-shadow: none;
   visibility: hidden;
 
   &.open {
     transform: translateX(300px);
     visibility: visible;
-    // Apply shadow ONLY when open
+
     box-shadow: 40px 0 80px rgba(0, 0, 0, 0.4);
   }
 

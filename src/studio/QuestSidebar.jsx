@@ -9,14 +9,15 @@ export default function QuestSidebar() {
   });
 
   const leaderboard = [
-    { rank: 1, name: "AlphaCoder", xp: 12450 },
-    { rank: 2, name: "ByteCommander", xp: 11200 },
-    { rank: 3, name: "Studio_Fan", xp: 9800 },
+    { rank: 1, name: "Ryuga", xp: 112000 },
+    { rank: 2, name: "User 2", xp: 12450 },
+    { rank: 3, name: "User 3", xp: 11200 },
+    { rank: 4, name: "User 1", xp: 9800 },
+    { rank: 5, name: "User 4", xp: 9800 },
   ];
 
   return (
     <div className="quest-sidebar-inner">
-      {/* New Simplified Session Header */}
       <div className="sidebar-top-header">
         <div className="session-info">
           <span className="date-label">{today}</span>
@@ -26,7 +27,6 @@ export default function QuestSidebar() {
       </div>
 
       <div className="sidebar-scroll-content">
-        {/* 1. Personal Stats Card */}
         <div className="sidebar-card profile-stats">
           <div className="streak-badge">
             <i className="fa-solid fa-fire"></i>
@@ -44,9 +44,8 @@ export default function QuestSidebar() {
           </div>
         </div>
 
-        {/* 2. Mini Leaderboard */}
         <div className="sidebar-card leaderboard">
-          <h3 className="card-title">Top Seekers</h3>
+          <h3 className="card-title">Top 5 Challengers</h3>
           <div className="leader-list">
             {leaderboard.map((user) => (
               <div key={user.rank} className="leader-item">
@@ -56,20 +55,19 @@ export default function QuestSidebar() {
               </div>
             ))}
           </div>
-          <button className="view-all-btn">View Global Standings</button>
+          {/* <button className="view-all-btn">View Global Standings</button> */}
         </div>
 
-        {/* 3. Badges */}
         <div className="sidebar-card rewards">
           <h3 className="card-title">Earned Badges</h3>
           <div className="badge-grid">
             <div className="badge-slot unlocked">
               <i className="fa-solid fa-rocket"></i>
             </div>
-            <div className="badge-slot unlocked">
+            <div className="badge-slot locked">
               <i className="fa-solid fa-bug-slash"></i>
             </div>
-            <div className="badge-slot unlocked">
+            <div className="badge-slot locked">
               <i className="fa-solid fa-bolt"></i>
             </div>
             <div className="badge-slot locked">

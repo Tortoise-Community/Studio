@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Footer from "./Footer";
 import "./styles/Challenges.scss";
 import QuestSidebar from "./QuestSidebar";
-// Mock data remains same...
 const MOCK_QUESTS = [
   {
     day: 1,

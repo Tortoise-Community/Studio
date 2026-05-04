@@ -75,7 +75,6 @@ $text-muted: rgba(255, 255, 255, 0.4);
   }
 }
 
-// Profile Stats (Fire Streak)
 .profile-stats {
   text-align: center;
   .streak-badge {
@@ -125,7 +124,6 @@ $text-muted: rgba(255, 255, 255, 0.4);
   }
 }
 
-// Leaderboard Rows
 .leader-list {
   display: flex;
   flex-direction: column;
@@ -172,7 +170,6 @@ $text-muted: rgba(255, 255, 255, 0.4);
   }
 }
 
-// Badges Grid
 .badge-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);

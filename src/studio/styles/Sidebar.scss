@@ -1,0 +1,177 @@
+$bg-obsidian: #050505;
+$accent-gold: #c5a47e;
+$border-light: rgba(255, 255, 255, 0.05);
+$text-dim: rgba(255, 255, 255, 0.3);
+$border-soft: rgba(255, 255, 255, 0.08);
+
+.studio-blade {
+  position: fixed;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  height: 100vh;
+  background-color: $bg-obsidian;
+  border-right: 1px solid $border-soft; // Matches your global border style
+  z-index: 3000;
+  transition:
+    transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 0.4s ease,
+    visibility 0.4s;
+
+  // FIX: Remove shadow and hide visibility when closed to prevent "edge bleeding"
+  box-shadow: none;
+  visibility: hidden;
+
+  &.open {
+    transform: translateX(300px);
+    visibility: visible;
+    // Apply shadow ONLY when open
+    box-shadow: 40px 0 80px rgba(0, 0, 0, 0.4);
+  }
+
+  .blade-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .blade-header {
+    padding: 32px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mono-label {
+      font-family: "JetBrains Mono", monospace;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: $accent-gold;
+      font-weight: 700;
+    }
+
+    .close-blade {
+      background: none;
+      border: none;
+      color: $text-dim;
+      cursor: pointer;
+      font-size: 14px;
+      transition: 0.2s;
+      &:hover {
+        color: #fff;
+        transform: translateX(-2px);
+      }
+    }
+  }
+
+  .blade-body {
+    flex: 1;
+    padding: 0 16px;
+
+    .nav-group {
+      margin-bottom: 32px;
+
+      .group-label {
+        display: block;
+        font-size: 11px;
+        font-weight: 700;
+        color: $text-dim;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        margin-left: 12px;
+      }
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      border-radius: 8px;
+      transition: 0.2s;
+
+      i {
+        width: 18px;
+        font-size: 16px;
+        opacity: 0.5;
+      }
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.03);
+        color: #fff;
+        i {
+          opacity: 1;
+        }
+      }
+
+      &.active {
+        background: rgba(255, 255, 255, 0.05);
+        color: #fff;
+        i {
+          color: $accent-gold;
+          opacity: 1;
+        }
+      }
+    }
+
+    .quest-link {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 12px;
+      background: #000;
+      border: 1px solid $border-light;
+      border-radius: 12px;
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 700;
+      transition: 0.3s;
+
+      .quest-icon-box {
+        width: 32px;
+        height: 32px;
+        background: rgba($accent-gold, 0.1);
+        border: 1px solid rgba($accent-gold, 0.2);
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: $accent-gold;
+      }
+
+      &:hover {
+        border-color: rgba($accent-gold, 0.5);
+        .quest-icon-box {
+          background: $accent-gold;
+          color: #000;
+        }
+      }
+    }
+  }
+
+  .blade-footer {
+    padding: 24px;
+    border-top: 1px solid $border-light;
+
+    .footer-status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 10px;
+      font-weight: 700;
+      color: $text-dim;
+
+      .status-dot {
+        width: 6px;
+        height: 6px;
+        background: #00af9b;
+        border-radius: 50%;
+        box-shadow: 0 0 8px #00af9b;
+      }
+    }
+  }
+}

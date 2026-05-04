@@ -5,6 +5,7 @@ import CodeEditor from "./components/CodeEditor";
 import TestConsole from "./components/TestConsole";
 import Header from "./components/Header";
 import "./styles/main.scss";
+import Footer from "./Footer";
 
 export default function Main() {
   const [language, setLanguage] = useState("python");
@@ -44,7 +45,6 @@ export default function Main() {
 
   return (
     <div className="leetcode-container">
-      <Header />
       <main className="main-workspace">
         <Group orientation="horizontal">
           <Panel defaultSize={40} minSize={20}>

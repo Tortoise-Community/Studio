@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./styles/Header.scss";
 
-export default function Header() {
+export default function Header({ onMenuClick }) {
   const [showUserMenu, setShowUserMenu] = useState(false);
   const menuRef = useRef(null);
   const user = {
@@ -20,7 +20,11 @@ export default function Header() {
 
   return (
     <header className="master-header">
-      <div className="header-section left"></div>
+      <div className="header-section left">
+        <button className="menu-toggle" onClick={onMenuClick}>
+          <i className="fa-solid fa-bars-staggered"></i>
+        </button>
+      </div>
 
       <div className="header-section center">
         <div className="master-branding">

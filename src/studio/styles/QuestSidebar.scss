@@ -1,0 +1,204 @@
+$bg-inner: #050505;
+$accent-gold: #c5a47e;
+$border-soft: rgba(255, 255, 255, 0.08);
+$text-muted: rgba(255, 255, 255, 0.4);
+
+.quest-sidebar-inner {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .sidebar-top-header {
+    padding: 40px 30px 10px;
+    border-bottom: 1px solid $border-soft;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.02),
+      transparent
+    );
+
+    .session-info {
+      .date-label {
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $accent-gold;
+        letter-spacing: 1px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      h4 {
+        font-size: 20px;
+        font-weight: 800;
+        color: #fff;
+        margin: 0;
+        letter-spacing: -0.5px;
+      }
+      .session-status {
+        font-size: 13px;
+        color: $text-muted;
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .sidebar-scroll-content {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    overflow-y: auto;
+    flex: 1;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.05);
+    }
+  }
+
+  .sidebar-card {
+    background: #141414;
+    border: 1px solid $border-soft;
+    border-radius: 16px;
+    padding: 24px;
+
+    .card-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: $text-muted;
+      margin-bottom: 20px;
+      font-weight: 700;
+    }
+  }
+}
+
+// Profile Stats (Fire Streak)
+.profile-stats {
+  text-align: center;
+  .streak-badge {
+    margin-bottom: 24px;
+    i {
+      font-size: 38px;
+      color: #ff6b35;
+      filter: drop-shadow(0 0 12px rgba(#ff6b35, 0.3));
+      margin-bottom: 8px;
+    }
+    .count {
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+      display: block;
+      line-height: 1;
+    }
+    .label {
+      font-size: 11px;
+      text-transform: uppercase;
+      color: $text-muted;
+      letter-spacing: 1px;
+      font-weight: 600;
+    }
+  }
+
+  .xp-info {
+    .xp-header {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #fff;
+    }
+    .xp-bar {
+      height: 6px;
+      background: $bg-inner;
+      border-radius: 10px;
+      overflow: hidden;
+      .xp-fill {
+        height: 100%;
+        background: $accent-gold;
+        box-shadow: 0 0 8px rgba($accent-gold, 0.3);
+      }
+    }
+  }
+}
+
+// Leaderboard Rows
+.leader-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+  .leader-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    .rank {
+      width: 24px;
+      color: $accent-gold;
+      font-weight: 800;
+      font-size: 12px;
+    }
+    .name {
+      flex: 1;
+      color: #fff;
+      font-weight: 500;
+    }
+    .xp {
+      color: $text-muted;
+      font-size: 11px;
+      font-weight: 600;
+    }
+  }
+}
+
+.view-all-btn {
+  width: 100%;
+  background: transparent;
+  border: 1px solid $border-soft;
+  color: $text-muted;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+  &:hover {
+    color: #fff;
+    border-color: rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.02);
+  }
+}
+
+// Badges Grid
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+
+  .badge-slot {
+    aspect-ratio: 1;
+    background: $bg-inner;
+    border: 1px solid $border-soft;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    transition: 0.2s;
+
+    &.unlocked {
+      color: $accent-gold;
+      border-color: rgba($accent-gold, 0.2);
+      &:hover {
+        border-color: $accent-gold;
+        transform: translateY(-2px);
+      }
+    }
+    &.locked {
+      color: rgba(255, 255, 255, 0.05);
+    }
+  }
+}

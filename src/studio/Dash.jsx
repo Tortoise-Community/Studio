@@ -2,6 +2,7 @@ import React, { useState, useMemo } from "react";
 import Header from "./components/Header";
 import "./styles/Dash.scss";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
+import Footer from "./Footer";
 
 const MOCK_PROBLEMS = Array.from({ length: 60 }, (_, i) => ({
   id: i + 1,
@@ -44,8 +45,6 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-page">
-      <Header />
-
       <main className="dashboard-grid">
         <section className="main-content">
           <div className="stats-row">

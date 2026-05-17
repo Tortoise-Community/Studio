@@ -53,6 +53,13 @@ export default function Header({ onMenuClick }) {
         <button className="menu-toggle" onClick={onMenuClick}>
           <i className="fa-solid fa-bars-staggered"></i>
         </button>
+        <div
+          className="beta-warning-badge"
+          title="Backend API integration pending. Design is subject to change"
+        >
+          <i className="fa-solid fa-triangle-exclamation"></i>
+          <span>Beta pages</span>
+        </div>
       </div>
 
       <div className="header-section center">
@@ -116,7 +123,8 @@ export default function Header({ onMenuClick }) {
                 ) : (
                   <div className="notify-item">
                     <p className="notify-desc center">
-                      It's eerily quiet here <i class="fa-solid fa-ghost"></i>
+                      It's eerily quiet here{" "}
+                      <i className="fa-solid fa-ghost"></i>
                     </p>
                   </div>
                 )}

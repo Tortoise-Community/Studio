@@ -88,6 +88,19 @@ export default function CodeEditor({
               </>
             )}
           </button>
+          <button
+            className="run-action-btn submit"
+            onClick={() => onExecute(editorRef.current.getValue())}
+            disabled={isRunning}
+          >
+            {isRunning ? (
+              <span className="spinner-border spinner-border-sm" />
+            ) : (
+              <>
+                <i className="fas fa-cloud-arrow-up"></i> <span>Submit</span>
+              </>
+            )}
+          </button>
         </div>
       </div>
 

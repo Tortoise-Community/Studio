@@ -1,6 +1,7 @@
 $editor-bg: #1a1a1a;
 $header-bg: #242424;
 $accent-gold: #c5a47e;
+$accent-green: #2db55d;
 $border-soft: rgba(255, 255, 255, 0.08);
 
 .editor-window {
@@ -78,6 +79,17 @@ $border-soft: rgba(255, 255, 255, 0.08);
       align-items: center;
       gap: 8px;
       transition: all 0.2s;
+      &.submit {
+        margin-left: 10px;
+        padding: 5px 16px;
+        background-color: transparent;
+        border: 1px solid $accent-green;
+        color: $accent-green;
+        &:hover:not(:disabled) {
+          filter: brightness(1.1);
+          box-shadow: 0 0 15px rgba($accent-green, 0.3);
+        }
+      }
 
       &:hover:not(:disabled) {
         filter: brightness(1.1);

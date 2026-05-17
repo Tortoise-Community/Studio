@@ -44,14 +44,14 @@ export default function Login() {
           >
             <i className="fa-brands fa-google"></i>
             <span>Continue with Google</span>
-          </button> 
+          </button> */}
           <button
             className="sso-btn github"
             onClick={() => handleLogin("github")}
           >
             <i className="fa-brands fa-github"></i>
             <span>Continue with GitHub</span>
-          </button> */}
+          </button>
 
           <button
             className="sso-btn discord"

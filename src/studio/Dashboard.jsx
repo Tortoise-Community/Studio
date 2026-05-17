@@ -60,7 +60,7 @@ export default function Dashboard() {
           <div className="dashboard-hero-row">
             <div className="welcome-box">
               <h2>
-                Welcome back, <span>Dev</span>
+                Welcome back, <span>Ryuga</span>
               </h2>
               <p>
                 Your current streak: <span className="gold">12 Days</span> 🔥

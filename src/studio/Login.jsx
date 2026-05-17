@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Login.scss";
-
+import { useNavigate } from "react-router-dom";
 export default function Login() {
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -12,7 +13,8 @@ export default function Login() {
 
   const handleLogin = (provider) => {
     setError(null);
-    window.location.href = `${import.meta.env.VITE_API_URL}/auth/${provider}`;
+    navigate("/dashboard");
+    // window.location.href = `${import.meta.env.VITE_API_URL}/auth/${provider}`;
   };
 
   return (

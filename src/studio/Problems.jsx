@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import Header from "./components/Header";
-import "./styles/Dash.scss";
+import "./styles/Problems.scss";
 import { Link } from "react-router-dom/cjs/react-router-dom.min";
 import Footer from "./Footer";
 
@@ -21,7 +21,7 @@ const MOCK_PROBLEMS = Array.from({ length: 60 }, (_, i) => ({
   acceptance: (Math.random() * 50 + 35).toFixed(1) + "%",
 }));
 
-export default function Dashboard() {
+export default function Problems() {
   const [search, setSearch] = useState("");
   const [difficulty, setDifficulty] = useState("All");
   const [status, setStatus] = useState("All");
@@ -128,7 +128,7 @@ export default function Dashboard() {
                       )}
                     </td>
                     <td className="title-col">
-                      <Link to="/problems">
+                      <Link to="/solve">
                         <span className="p-link">{p.title}</span>
                       </Link>
                     </td>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Header from "./components/Header";
 import Footer from "./Footer";
-import "./styles/Challenges.scss";
+import "./styles/Roadmap.scss";
 import QuestSidebar from "./QuestSidebar";
 const MOCK_QUESTS = [
   {
@@ -48,7 +48,7 @@ const MOCK_QUESTS = [
   },
 ];
 
-export default function Challenges() {
+export default function Roadmap() {
   const [quests, setQuests] = useState(MOCK_QUESTS);
 
   // Calculate Progress
@@ -62,8 +62,8 @@ export default function Challenges() {
         <main className="challenges-content">
           <header className="challenges-header">
             <div className="header-info">
-              <h1>Weekly Quest</h1>
-              <p>Complete daily challenges to unlock the next chapter.</p>
+              <h1>Learning Plan</h1>
+              <p>Complete daily challenges.</p>
             </div>
 
             <div className="progress-section">

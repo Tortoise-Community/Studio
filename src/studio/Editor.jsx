@@ -4,10 +4,10 @@ import ProblemDescription from "./components/ProblemDescription";
 import CodeEditor from "./components/CodeEditor";
 import TestConsole from "./components/TestConsole";
 import Header from "./components/Header";
-import "./styles/main.scss";
+import "./styles/Editor.scss";
 import Footer from "./Footer";
 
-export default function Main() {
+export default function Editor() {
   const [language, setLanguage] = useState("python");
   const [output, setOutput] = useState(null);
   const [error, setError] = useState("");

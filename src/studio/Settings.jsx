@@ -50,7 +50,7 @@ export default function Settings() {
               className={`nav-btn danger ${activeTab === "danger" ? "active" : ""}`}
               onClick={() => setActiveTab("danger")}
             >
-              <i className="fa-solid fa-skull-crossbones"></i>
+              <i className="fa-solid fa-skull"></i>
               <span>Danger Zone</span>
             </button>
           </nav>

@@ -1,17 +1,21 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import "./styles/Sidebar.scss";
+import "./styles/SideNav.scss";
 
-export default function Sidebar({ isOpen, onClose }) {
+export default function SideNav({ isOpen, onClose }) {
   const location = useLocation();
 
   const primaryNav = [
-    { label: "Dashboard", icon: "fa-solid fa-layer-group", path: "/dash" },
+    { label: "Dashboard", icon: "fa-solid fa-layer-group", path: "/dashboard" },
     { label: "Problems", icon: "fa-solid fa-terminal", path: "/problems" },
   ];
 
   const questNav = [
-    { label: "Challenges", icon: "fa-solid fa-bolt", path: "/challenges" },
+    {
+      label: "Learning Roadmap",
+      icon: "fa-solid fa-bolt",
+      path: "/roadmap",
+    },
   ];
 
   return (
@@ -19,7 +23,7 @@ export default function Sidebar({ isOpen, onClose }) {
       <div className="blade-container">
         <div className="blade-header">
           <div className="blade-branding">
-            <span className="mono-label">DIRECTORY</span>
+            <span className="mono-label">STUDIO</span>
           </div>
           <button className="close-blade" onClick={onClose}>
             <i className="fa-solid fa-chevron-left"></i>
@@ -43,7 +47,7 @@ export default function Sidebar({ isOpen, onClose }) {
           </div>
 
           <div className="nav-group quest-group">
-            <span className="group-label">Advancement</span>
+            <span className="group-label">Learning</span>
             {questNav.map((item) => (
               <Link
                 to={item.path}

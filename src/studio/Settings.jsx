@@ -5,7 +5,7 @@ import Footer from "./Footer";
 
 export default function Settings() {
   const [activeTab, setActiveTab] = useState("profile");
-  const [username, setUsername] = useState("StudioUser_01");
+  const [username, setUsername] = useState("Ryuga");
   const [lcUsername, setLcUsername] = useState("");
 
   const [notifs, setNotifs] = useState({

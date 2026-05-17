@@ -9,7 +9,7 @@ export default function Header({ onMenuClick }) {
   const notifyRef = useRef(null);
 
   const user = {
-    avatarUrl: "https://lairesit.sirv.com/Tortoise/tortoise-logo.png",
+    avatarUrl: "https://lairesit.sirv.com/Tortoise/ryuga.jpg",
   };
 
   const notifications = [
@@ -66,7 +66,7 @@ export default function Header({ onMenuClick }) {
 
       <div className="header-section right">
         <a
-          href="https://patreon.com/tortoise"
+          href="https://patreon.com/"
           target="_blank"
           rel="noreferrer"
           className="support-action"

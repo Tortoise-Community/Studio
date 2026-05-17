@@ -58,7 +58,11 @@ export default function Header({ onMenuClick }) {
       <div className="header-section center">
         <div className="master-branding">
           <div className="brand-logo">
-            <img src={user.avatarUrl} alt="Logo" className="brand-img" />
+            <img
+              src="https://lairesit.sirv.com/Tortoise/tortoise-logo.png"
+              alt="Logo"
+              className="brand-img"
+            />
           </div>
           <span className="brand-name">Studio</span>
         </div>

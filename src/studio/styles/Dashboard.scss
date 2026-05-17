@@ -1,0 +1,381 @@
+// --- Variables ---
+$master-black: #000000;
+$panel-dark: #0a0a0c;
+$accent-gold: #c5a47e;
+$accent-green: #00af9b;
+$accent-red: #ff4b4b;
+$border-glass: rgba(255, 255, 255, 0.05);
+$text-dim: rgba(255, 255, 255, 0.4);
+$transition-smooth: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+// --- Mixins ---
+@mixin glass-panel($bg: $panel-dark) {
+  background: $bg;
+  border: 1px solid $border-glass;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin hover-lift {
+  transition: $transition-smooth;
+  &:hover {
+    border-color: rgba($accent-gold, 0.3);
+    transform: translateY(-3px);
+  }
+}
+
+// --- Base Layout ---
+.studio-shell {
+  display: flex;
+  background-color: $master-black;
+  min-height: 100vh;
+  color: #fff;
+  font-family: "Inter", sans-serif; // Assuming a clean font
+}
+
+.main-stage {
+  flex: 1;
+  min-width: 0;
+
+  .stage-content {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+
+// --- Typography ---
+.section-title {
+  font-size: 12px;
+  text-transform: uppercase;
+  color: $text-dim;
+  font-weight: 800;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+// --- Dashboard Layout ---
+.dashboard-hero-row {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 24px;
+  margin-bottom: 40px;
+
+  .welcome-box {
+    h2 {
+      font-size: 32px;
+      font-weight: 800;
+      span {
+        color: $accent-gold;
+      }
+    }
+    p {
+      color: $text-dim;
+      font-size: 16px;
+      .gold {
+        color: $accent-gold;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+.studio-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 32px;
+}
+
+// --- Common Components ---
+.daily-challenge-card {
+  @include glass-panel(linear-gradient(135deg, #0f0f11, #050505));
+  border: 1px solid rgba($accent-gold, 0.2);
+  border-radius: 16px;
+
+  .card-tag {
+    font-size: 10px;
+    font-weight: 800;
+    color: $accent-gold;
+    letter-spacing: 1px;
+  }
+
+  h3 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+
+  .challenge-meta {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+    font-size: 11px;
+    font-weight: 800;
+
+    .diff {
+      text-transform: uppercase;
+      &.hard {
+        color: $accent-red;
+      }
+    }
+    .points {
+      color: $accent-green;
+    }
+  }
+
+  .btn-solve {
+    background: $accent-gold;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s;
+    &:hover {
+      filter: brightness(1.1);
+    }
+  }
+}
+
+.topic-card {
+  @include glass-panel;
+  @include hover-lift;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+
+  .topic-icon {
+    @include flex-center;
+    font-size: 18px;
+    color: $accent-gold;
+    background: rgba($accent-gold, 0.05);
+    width: 44px;
+    height: 44px;
+    border-radius: 10px;
+  }
+
+  .topic-info {
+    flex: 1;
+    h4 {
+      font-size: 14px;
+      margin-bottom: 4px;
+    }
+    p {
+      font-size: 11px;
+      color: $text-dim;
+      margin-bottom: 8px;
+    }
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 4px;
+    background: #222;
+    border-radius: 2px;
+    overflow: hidden;
+    .fill {
+      height: 100%;
+      background: $accent-gold;
+      transition: width 1s ease;
+    }
+  }
+}
+
+// --- Practice CTA ---
+.practice-cta-card {
+  @include glass-panel(
+    linear-gradient(135deg, rgba($accent-gold, 0.1) 0%, transparent 100%)
+  );
+  border: 1px solid rgba($accent-gold, 0.2);
+  border-radius: 16px;
+  padding: 30px;
+  margin-bottom: 32px;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  display: block;
+  transition: $transition-smooth;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("https://www.transparenttextures.com/patterns/carbon-fibre.png");
+    opacity: 0.05;
+    pointer-events: none;
+  }
+
+  &:hover {
+    border-color: $accent-gold;
+    transform: translateY(-4px);
+    background: linear-gradient(
+      135deg,
+      rgba($accent-gold, 0.15) 0%,
+      transparent 100%
+    );
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+
+    .icon-side i {
+      transform: translateX(5px);
+      color: #fff;
+    }
+  }
+
+  .cta-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    .text-side {
+      .cta-tag {
+        font-size: 10px;
+        font-weight: 800;
+        color: $accent-gold;
+        letter-spacing: 2px;
+        margin-bottom: 8px;
+        display: block;
+      }
+      h3 {
+        font-size: 24px;
+        color: #fff;
+        margin-bottom: 8px;
+      }
+      p {
+        color: $text-dim;
+        font-size: 14px;
+        max-width: 80%;
+        margin: 0;
+      }
+    }
+
+    .icon-side i {
+      font-size: 24px;
+      color: rgba($accent-gold, 0.5);
+      transition: $transition-smooth;
+    }
+  }
+}
+
+// --- API Access ---
+.api-access-card {
+  @include glass-panel(rgba($accent-gold, 0.03));
+  @include hover-lift;
+  border: 1px solid rgba($accent-gold, 0.2);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 24px;
+
+  .api-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    i {
+      color: $accent-gold;
+      font-size: 14px;
+    }
+    span {
+      font-size: 9px;
+      font-weight: 800;
+      letter-spacing: 2px;
+      color: $accent-gold;
+    }
+  }
+
+  h4 {
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 8px;
+  }
+  p {
+    font-size: 12px;
+    color: $text-dim;
+    line-height: 1.5;
+    margin-bottom: 16px;
+  }
+
+  .api-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    font-weight: 700;
+    i {
+      color: $accent-gold;
+      font-size: 12px;
+    }
+  }
+}
+
+// --- Sidebar Stats & Heatmap ---
+.grid-side-area {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  .stats-card,
+  .heatmap-card {
+    @include glass-panel;
+    h3 {
+      font-size: 12px;
+      color: $text-dim;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      font-weight: 800;
+    }
+  }
+
+  .stat-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 14px;
+    .gold {
+      color: $accent-gold;
+      font-family: "JetBrains Mono", monospace;
+    }
+  }
+}
+
+.heatmap-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  .heat-cell {
+    aspect-ratio: 1;
+    border-radius: 2px;
+    background: #1a1a1c;
+    &.level-1 {
+      background: #1e3a2a;
+    }
+    &.level-2 {
+      background: #2d5a3a;
+    }
+    &.level-3 {
+      background: #3d7a4a;
+    }
+  }
+}
+
+// --- Grid Definitions ---
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+// --- Responsive ---
+@media (max-width: 1100px) {
+  .studio-grid,
+  .dashboard-hero-row,
+  .topics-grid {
+    grid-template-columns: 1fr;
+  }
+}

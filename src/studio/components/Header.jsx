@@ -58,7 +58,7 @@ export default function Header({ onMenuClick }) {
           title="Backend API integration pending. Design is subject to change"
         >
           <i className="fa-solid fa-triangle-exclamation"></i>
-          <span>Beta pages</span>
+          <span>β</span>
         </div>
       </div>
 
